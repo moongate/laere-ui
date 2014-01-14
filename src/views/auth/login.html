@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="offset1 span5">
+        <a href="/auth/facebook"><img src="/dev/img/icons/facebook.png"/></a>
+        <a href="/auth/github"><img src="/dev/img/icons/github.png"/></a>
+        <a href="/auth/twitter"><img src="/dev/img/icons/twitter.png"/></a>
+        <a href="/auth/google"><img src="/dev/img/icons/google.png"/></a>
+    </div>
+    <div class="span6">
+        <form action="/users/session" method="post" class="signin form-horizontal">
+            <!--TODO-->
+            <div class="control-group">
+                <label for="username" class="control-label">Username</label>
+
+                <div class="controls">
+                    <input id="username" type="text" name="username"
+                           placeholder="Username"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="password" class="control-label">Password</label>
+
+                <div class="controls">
+                    <input id="password" type="password" name="password"
+                           placeholder="Password"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Login</button>
+                &nbsp;
+                or&nbsp;<a href="#/signup" class="show-signup">Sign up</a>
+            </div>
+        </form>
+
+    </div>
+</div>

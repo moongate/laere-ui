@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope"
+      itemtype="http://schema.org/Product">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Laere</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="keywords" content="classrooms, courses, teaching, teach, programming">
+    <meta name="description" content="Laere - the online classroom engine">
+    <link href="/dev/img/icons/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta property="fb:app_id" content="APP_ID">
+    <meta property="og:title" content="Laere - the online classroom engine">
+    <meta property="og:description" content="Learn and teach online">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://laere.co">
+    <meta property="og:image" content="http://laere.co/logo.png">
+    <meta property="og:site_name" content="Laere - the online classroom engine">
+    <meta property="fb:admins" content="gadr90">
+    <link rel="stylesheet" href="//io.vtex.com.br/front-libs/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/dev/style/main.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        window.laere = { baseUrl:'/dev/', apiPath:'/api/1/' };
+        window.user = laere.user;
+        window.school = laere.school;
+        window.env = laere.env;
+        window.laereHost = laere.host;
+        window.version = laere.version;
+    </script>
+</head>
+<body ng-app="laere">
+<header data-ng-include="'views/header.html'"></header>
+
+<section class="content">
+    <section class="container">
+        <section data-ng-view class="fade-in"></section>
+    </section>
+</section>
+
+<!--Libs-->
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/underscore/1.5.2/underscore-min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular/1.2.7/angular.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular/1.2.7/angular-animate.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular/1.2.7/angular-resource.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular/1.2.7/angular-route.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular-translate/1.1.1/angular-translate.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular-translate/1.1.1/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/angular-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="//io.vtex.com.br/front-libs/moment/2.4.0/moment.min.js"></script>
+
+<!-- build:js /dev/js/app.min.js -->
+<!--App-->
+<script type="text/javascript" src="/dev/script/app.js"></script>
+<script type="text/javascript" src="/dev/script/templates.js"></script>
+<!--Schools-->
+<script type="text/javascript" src="/dev/script/school/school-service.js"></script>
+<script type="text/javascript" src="/dev/script/school/school-controller.js"></script>
+<!--Users-->
+<script type="text/javascript" src="/dev/script/user/user-service.js"></script>
+<script type="text/javascript" src="/dev/script/user/user-controller.js"></script>
+<!--Courses-->
+<script type="text/javascript" src="/dev/script/course/course-service.js"></script>
+<script type="text/javascript" src="/dev/script/course/course-controller.js"></script>
+<!--Contents-->
+<script type="text/javascript" src="/dev/script/content/content-controller.js"></script>
+<script type="text/javascript" src="/dev/script/content/embed-directive.js"></script>
+<!--Classrooms-->
+<script type="text/javascript" src="/dev/script/classroom/classroom-service.js"></script>
+<script type="text/javascript" src="/dev/script/classroom/classroom-controller.js"></script>
+<!--Progress-->
+<script type="text/javascript" src="/dev/script/progress/progress-service.js"></script>
+<script type="text/javascript" src="/dev/script/progress/progress-controller.js"></script>
+<script type="text/javascript" src="/dev/script/progress/progress-view-controller.js"></script>
+<!--Teach-->
+<script type="text/javascript" src="/dev/script/teach/teach-controller.js"></script>
+<!--Global-->
+<script type="text/javascript" src="/dev/script/misc/directives.js"></script>
+<script type="text/javascript" src="/dev/script/misc/index-controller.js"></script>
+<script type="text/javascript" src="/dev/script/misc/header-controller.js"></script>
+<!-- endbuild -->
+</body>
+</html>
