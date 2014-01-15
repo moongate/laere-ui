@@ -8,21 +8,22 @@
     "postinstall": "grunt dist",
     "test": "karma start --single-run"
   },
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-less": "~0.8.3",
     "grunt-contrib-coffee": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.1",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-connect": "~0.6.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-concurrent": "~0.4.2",
     "grunt-usemin": "~2.0.2",
+    "grunt-angular-templates": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-connect": "~0.6.0",
     "grunt-karma": "~0.7.2",
-    "grunt-angular-templates": "~0.4.1",
     "grunt-connect-proxy": "~0.1.7",
     "karma": "~0.11.0",
     "karma-jasmine": "~0.1.5",

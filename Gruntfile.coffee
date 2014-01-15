@@ -111,6 +111,7 @@ module.exports = (grunt) ->
         files: ['src/script/**/*.coffee', 'spec/**/*.coffee']
         tasks: ['karma:unit:run']
 
+  grunt.loadNpmTasks name for name of pkg.dependencies when name[0..5] is 'grunt-'
   grunt.loadNpmTasks name for name of pkg.devDependencies when name[0..5] is 'grunt-'
 
   grunt.registerTask 'build',    ['clean', 'copy:main', 'coffee', 'less', 'ngtemplates']
