@@ -11,11 +11,11 @@ angular.module "laere.progress", []
 
 app.factory "Global", [=>
   @_data =
-    user: window.user
-    authenticated: !!window.user
-    school: window.school
-    env: window.env
-    host: window.laereHost
+    user: window.laere.user
+    authenticated: !!window.laere.user
+    school: window.laere.school
+    env: window.laere.env
+    host: window.laere.host
 
   @_data
 ]

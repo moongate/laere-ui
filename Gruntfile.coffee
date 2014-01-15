@@ -14,7 +14,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'src/'
-          src: ['**', '!script/**', '!**/*.less']
+          src: ['**', '!script/**', '!style/**', '!views/**']
           dest: 'build/<%= relativePath %>/'
         ]
 
@@ -71,16 +71,17 @@ module.exports = (grunt) ->
     connect:
       server:
         options:
+          open: 'http://laeredev.co:3000/'
           livereload: true
           hostname: "*"
-          port: 80
+          port: 3000
           middleware: (connect, options) ->
             proxy = require("grunt-connect-proxy/lib/utils").proxyRequest
             index = (req, res, next) -> (req.originalUrl = req.url = '/dev/index.html' if req.originalUrl is '/'); next()
-            [index, proxy, connect.compress(), connect.static('./build/')]
+            [index, proxy, connect.static('./build/')]
         proxies: [
           context: ['/', '!/dev']
-          host: 'laere.co'
+          host: 'laeredev.co'
         ]
 
     watch:
