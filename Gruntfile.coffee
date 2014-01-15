@@ -21,9 +21,12 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'build/<%= relativePath %>/'
-          src: '**'
+          src: ['**', '!index.html']
           dest: 'dist/'
         ]
+      distIndex:
+        files:
+          'dist/index.html': 'build/<%= relativePath %>/index.html'
         options:
           process: (content) -> content.replace(/\/dev\//g,'')
 
@@ -119,5 +122,5 @@ module.exports = (grunt) ->
   grunt.registerTask 'tdd',      ['build', 'karma:unit', 'server', 'watch']
   grunt.registerTask 'min',      ['build', 'useminPrepare', 'concat', 'uglify', 'usemin'] # minifies files
   grunt.registerTask 'devmin',   ['min', 'configureProxies:server', 'connect:server:keepalive'] # Minifies files and serve
-  grunt.registerTask 'dist',     ['min', 'copy:dist'] # Ready for production
+  grunt.registerTask 'dist',     ['min', 'copy:dist', 'copy:distIndex'] # Ready for production
   grunt.registerTask 'server',   ['configureProxies:server', 'connect']
