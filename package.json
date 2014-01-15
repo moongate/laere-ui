@@ -5,7 +5,6 @@
   "description": "Front end application for Laere",
   "main": "index.html",
   "scripts": {
-    "postinstall": "grunt dist",
     "test": "karma start --single-run"
   },
   "dependencies": {
