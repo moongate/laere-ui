@@ -4,6 +4,10 @@
   "readmeFilename": "README.md",
   "description": "Front end application for Laere",
   "main": "index.html",
+  "scripts": {
+    "postinstall": "grunt dist",
+    "test": "karma start --single-run"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-less": "~0.8.3",

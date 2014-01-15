@@ -7,7 +7,7 @@ module.exports = (grunt) ->
 
   # Tasks
     clean:
-      main: ['build', 'tmp-deploy']
+      main: ['build', 'dist', 'tmp-deploy']
 
     copy:
       main:
@@ -17,6 +17,15 @@ module.exports = (grunt) ->
           src: ['**', '!script/**', '!style/**', '!views/**']
           dest: 'build/<%= relativePath %>/'
         ]
+      dist:
+        files: [
+          expand: true
+          cwd: 'build/<%= relativePath %>/'
+          src: '**'
+          dest: 'dist/'
+        ]
+        options:
+          process: (content) -> content.replace(/\/dev\//g,'')
 
     coffee:
       main:
@@ -65,8 +74,6 @@ module.exports = (grunt) ->
         configFile: 'karma.conf.coffee'
       unit:
         background: true
-      single:
-        singleRun: true
 
     connect:
       server:
@@ -106,10 +113,10 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks name for name of pkg.devDependencies when name[0..5] is 'grunt-'
 
-  grunt.registerTask 'default', ['clean', 'copy', 'coffee', 'less', 'ngtemplates', 'server', 'watch']
-  grunt.registerTask 'tdd', ['clean', 'copy', 'coffee', 'less', 'ngtemplates', 'karma:unit', 'server', 'watch']
-  grunt.registerTask 'min', ['useminPrepare', 'concat', 'uglify', 'usemin'] # minifies files
-  grunt.registerTask 'dist', ['clean', 'copy', 'coffee', 'less', 'ngtemplates', 'min'] # Dist - minifies files
-  grunt.registerTask 'devmin', ['dist', 'configureProxies:server', 'connect:server:keepalive'] # Minifies files and serve
-  grunt.registerTask 'test', ['karma:single']
-  grunt.registerTask 'server', ['configureProxies:server', 'connect']
+  grunt.registerTask 'build',    ['clean', 'copy:main', 'coffee', 'less', 'ngtemplates']
+  grunt.registerTask 'default',  ['build', 'server', 'watch']
+  grunt.registerTask 'tdd',      ['build', 'karma:unit', 'server', 'watch']
+  grunt.registerTask 'min',      ['build', 'useminPrepare', 'concat', 'uglify', 'usemin'] # minifies files
+  grunt.registerTask 'devmin',   ['min', 'configureProxies:server', 'connect:server:keepalive'] # Minifies files and serve
+  grunt.registerTask 'dist',     ['min', 'copy:dist'] # Ready for production
+  grunt.registerTask 'server',   ['configureProxies:server', 'connect']

@@ -8,4 +8,5 @@ public/compiled
 .idea/
 npm-debug.log
 build/
+dist/
 .tmp/
