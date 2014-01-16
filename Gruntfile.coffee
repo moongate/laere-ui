@@ -21,14 +21,14 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: 'build/<%= relativePath %>/'
-          src: ['**', '!index.html', '!script/templates.js']
+          src: ['**', '!index.html', '!script/templates.js', '!script/app.min.js']
           dest: 'dist/'
         ]
       process:
         files: [
           expand: true
           cwd: 'build/<%= relativePath %>/'
-          src: ['index.html', 'script/templates.js']
+          src: ['index.html', 'script/templates.js', 'script/app.min.js']
           dest: 'dist/'
         ]
         options:
