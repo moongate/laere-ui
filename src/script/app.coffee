@@ -70,7 +70,12 @@ app.config ($translateProvider) ->
   $translateProvider.preferredLanguage 'pt-BR'
 
 app.run ($rootScope) ->
-  $rootScope.school = window.school
+  $rootScope.school = window.laere.school
+  $rootScope.messages =
+    error: window.laere.error
+    warning: window.laere.warning
+    success: window.laere.success
+
 
 angular.element(document).ready ->
   window.location.hash = ""  if window.location.hash is "#_=_" # Fixing facebook bug with redirect

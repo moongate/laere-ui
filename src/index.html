@@ -34,6 +34,9 @@
 
 <section class="content">
     <section class="container">
+        <div class="messages alert alert-danger" data-ng-show="messages.error">{{messages.error | translate}}</div>
+        <div class="messages alert alert-warning" data-ng-show="messages.warning">{{messages.warning | translate}}</div>
+        <div class="messages alert alert-success" data-ng-show="messages.success">{{messages.success | translate}}</div>
         <section data-ng-view class="fade-in"></section>
     </section>
 </section>

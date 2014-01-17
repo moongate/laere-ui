@@ -1,11 +1,15 @@
 {
   "title": "Laere",
+  "welcome": "Seja bem vindo ao Laere!",
   "auth": {
     "fullName": "Nome Completo",
     "email": "Email",
     "password": "Senha",
     "signUp": "Cadastrar",
     "login": "Login",
+    "existingUser": "Esse email já está cadastrado",
+    "noSuchUser": "Esse email não existe",
+    "invalidCredentials": "Seu email ou senha estão incorretos",
     "facebookLogin": "Entre com Facebook"
   },
   "header": {
