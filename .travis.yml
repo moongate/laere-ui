@@ -5,5 +5,8 @@ env:
   - NODE_ENV=test
 before_install:
   - npm install -g karma coffee-script
+branches:
+  only:
+    - master
 after_success:
   "curl --data 'laere-ui' http://laere.co:9001"
