@@ -1,41 +1,30 @@
 <div class="row">
-    <div class="offset1 span5">
-        <a href="/auth/facebook"><img src="/dev/img/icons/facebook.png"/></a>
-        <a href="/auth/github"><img src="/dev/img/icons/github.png"/></a>
-        <a href="/auth/twitter"><img src="/dev/img/icons/twitter.png"/></a>
-        <a href="/auth/google"><img src="/dev/img/icons/google.png"/></a>
-    </div>
-    <div class="span6">
-        <form action="/signup" method="post" class="signup form-horizontal">
-            <div class="control-group">
-                <label for="name" class="control-label">Full name</label>
+    <div class="col-md-3 page-header">
+        <form class="form signup" action="/signup" method="post">
+            <div class="form-group">
+                <label class="control-label" for="name" translate>auth.fullName</label>
+                <input type="text" id="name" name="name" placeholder="{{'auth.fullName' | translate}}" class="form-control input-lg" required autofocus>
+            </div>
 
-                <div class="controls">
-                    <input id="name" type="text" required name="name"
-                           placeholder="Full name"/>
-                </div>
+            <div class="form-group">
+                <label class="control-label" for="email" translate>auth.email</label>
+                <input type="text" id="email" name="email" placeholder="{{'auth.email' | translate}}" required class="form-control input-lg">
             </div>
-            <div class="control-group">
-                <label for="email" class="control-label">Email</label>
 
-                <div class="controls">
-                    <input id="email" type="email" required name="email"
-                           placeholder="Email"/>
-                </div>
+            <div class="form-group">
+                <label class="control-label" for="password" translate>auth.password</label>
+                <input type="password" id="password" name="password" placeholder="{{'auth.password' | translate}}" required class="form-control input-lg">
             </div>
-            <div class="control-group">
-                <label for="password" class="control-label">Password</label>
 
-                <div class="controls">
-                    <input id="password" type="password" name="password"
-                           placeholder="Password"/>
-                </div>
-            </div>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Sign up</button>
-                &nbsp;
-                or&nbsp;<a href="#/login" class="show-login">login</a>
-            </div>
+            <button type="submit" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-ok-sign">&nbsp<span translate>auth.signUp</span></span></button>
+            <br/>
+            <!-- TODO ~~~~ OI RODRIGO, ME RESOLVA :D ~~ ~~ -->
+            <br/>
+            <br/>
+            <br/>
+            <a href="/auth/facebook">
+                <button class="btn btn-facebook btn-lg pull-right" translate>auth.facebookLogin</button>
+            </a>
         </form>
     </div>
 </div>

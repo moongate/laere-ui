@@ -1,3 +1,6 @@
 {
-  "speedbag": "Speedbag"
+  "title": "Laere",
+  "auth": {
+    "facebookLogin": "Sign in with Facebook"
+  }
 }

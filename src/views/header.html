@@ -12,13 +12,13 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
         <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-            <a href="#/{{item.link}}">{{item.title}}</a>
+            <a href="#/{{item.link}}">{{item.title | translate}}</a>
         </li>
     </ul>
 
     <div class="pull-right" data-ng-hide="global.authenticated">
-        <a href="#/signup" class="btn btn-default navbar-btn">Signup</a>
-        <a href="#/login" class="btn btn-default navbar-btn">Login</a>
+        <a href="#/signup" class="btn btn-default navbar-btn" translate>header.signUp</a>
+        <a href="#/login" class="btn btn-default navbar-btn" translate>header.login</a>
     </div>
 
     <ul class="nav navbar-nav navbar-right" data-ng-show="global.authenticated">
@@ -28,11 +28,11 @@
 			</a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#">My profile</a>
+                    <a href="#" translate>header.profile</a>
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="/signout">Signout</a>
+                    <a href="/signout" translate>header.signOut</a>
                 </li>
             </ul>
         </li>

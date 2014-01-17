@@ -1,3 +1,17 @@
 {
-  "speedbag": "Speedbag"
+  "title": "Laere",
+  "auth": {
+    "fullName": "Nome Completo",
+    "email": "Email",
+    "password": "Senha",
+    "signUp": "Cadastrar",
+    "login": "Login",
+    "facebookLogin": "Entre com Facebook"
+  },
+  "header": {
+    "profile": "Meu perfil",
+    "signUp": "Cadastrar-se",
+    "login": "Login",
+    "signOut": "Sair"
+  }
 }
