@@ -13,7 +13,6 @@ angular.module("laere.users").controller "UsersController", ($scope, $routeParam
       name: $scope.user.name
       email: $scope.user.email
       password: $scope.user.password
-      username: $scope.user.username
       school: $scope.user.school
       permissions: $scope.user.permissions
     )
@@ -22,7 +21,6 @@ angular.module("laere.users").controller "UsersController", ($scope, $routeParam
 
     @name = ""
     @email = ""
-    @username = ""
     @school = ""
     @permissions = {}
 
