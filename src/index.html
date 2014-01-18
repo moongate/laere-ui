@@ -34,9 +34,18 @@
 
 <section class="content">
     <section class="container">
-        <div class="messages alert alert-danger" data-ng-show="messages.error">{{messages.error | translate}}</div>
-        <div class="messages alert alert-warning" data-ng-show="messages.warning">{{messages.warning | translate}}</div>
-        <div class="messages alert alert-success" data-ng-show="messages.success">{{messages.success | translate}}</div>
+        <div class="messages alert alert-danger alert-dismissable" data-ng-show="messages.error">
+            <button type="button" class="close" aria-hidden="true" ng-click="messages.error = null">&times;</button>
+            {{messages.error | translate}}
+        </div>
+        <div class="messages alert alert-warning" data-ng-show="messages.warning">
+            <button type="button" class="close" aria-hidden="true" ng-click="messages.warning = null">&times;</button>
+            {{messages.warning | translate}}
+        </div>
+        <div class="messages alert alert-success" data-ng-show="messages.success">
+            <button type="button" class="close" aria-hidden="true" ng-click="messages.success = null">&times;</button>
+            {{messages.success | translate}}
+        </div>
         <section data-ng-view class="fade-in"></section>
     </section>
 </section>
