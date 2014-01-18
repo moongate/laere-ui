@@ -14,4 +14,4 @@ describe 'Laere Module', ->
 
   it 'should have a defined menu', ->
     console.log scope
-    expect(scope.menu).toBeDefined()
+    expect(scope.global).toBeDefined()
