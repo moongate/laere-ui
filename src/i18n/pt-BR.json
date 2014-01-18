@@ -16,6 +16,16 @@
     "profile": "Meu perfil",
     "signUp": "Cadastrar-se",
     "login": "Login",
-    "signOut": "Sair"
+    "signOut": "Sair",
+    "schools": "Escolas",
+    "users": "Usuários",
+    "classrooms": "Salas de aula",
+    "courses": "Cursos",
+    "contents": "Conteúdos"
+  },
+  "home": {
+    "start": "Comece",
+    "createSchool": "criando sua Escola",
+    "orLoginExistingSchool": "ou faça login em uma Escola existente:"
   }
 }

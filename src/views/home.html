@@ -3,9 +3,12 @@
         <h1>Laere {{global.school.label}}</h1>
     </div>
     <div data-ng-hide="global.school">
-        <h1>Laere</h1>
-        <p>Start by <a href="/#/schools/create">creating your school</a> on signing in an existing one.</p>
-        <p>Currently created schools:</p>
+        <h1 translate>title</h1>
+        <p>
+            <span translate>home.start</span>
+            <a href="/#/schools/create" translate>home.createSchool</a>
+            <span translate>home.orLoginExistingSchool</span>
+        </p>
         <ul class="schools">
             <li data-ng-repeat="school in schools">
                 <a href="//{{school.name}}.{{global.host}}">{{school.label}}</a>
