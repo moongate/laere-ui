@@ -11,7 +11,7 @@
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-        <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+        <li data-ng-repeat="item in menu" data-ng-show="global.user" ng-class="{active: $uiRoute}">
             <a href="#/{{item.link}}">{{item.title | translate}}</a>
         </li>
     </ul>
