@@ -10,9 +10,21 @@
   </div>
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-        <li data-ng-repeat="item in menu" data-ng-show="global.user" ng-class="{active: $uiRoute}">
-            <a href="#/{{item.link}}">{{item.title | translate}}</a>
+    <ul class="nav navbar-nav" data-ng-show="global.user">
+        <li>
+            <a href="#/schools" translate ng-hide="global.school">header.schools</a>
+        </li>
+        <li>
+            <a href="#/users" translate ng-show="global.school">header.users</a>
+        </li>
+        <li>
+            <a href="#/classrooms" translate ng-show="global.school">header.classrooms</a>
+        </li>
+        <li>
+            <a href="#/courses" translate ng-show="global.school">header.courses</a>
+        </li>
+        <li>
+            <a href="#/contents" translate ng-show="global.school">header.contents</a>
         </li>
     </ul>
 
