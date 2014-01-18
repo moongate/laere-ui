@@ -9,6 +9,7 @@
     "login": "Login",
     "existingUser": "Esse email já está cadastrado",
     "noSuchUser": "Esse email não existe",
+    "noSuchUserOnSchool": "Esse email não está cadastrado nessa escola",
     "invalidCredentials": "Seu email ou senha estão incorretos",
     "facebookLogin": "Entre com Facebook"
   },
