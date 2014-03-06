@@ -11,13 +11,11 @@ module.exports = (config) ->
 			'spec/libs/angular-bootstrap/0.9.0/ui-bootstrap-tpls.min.js'
 			'spec/libs/moment/2.4.0/moment.min.js'
 			'spec/libs/underscore/1.5.2/underscore-min.js'
-			'src/script/**/*.coffee'
-      {pattern:'src/i18n/**/*.json', included:false}
+			'script/**/*.coffee'
+      {pattern:'i18n/**/*.json', included:false}
 			'spec/**/*.coffee'
 		]
 		frameworks: ['jasmine']
 		browsers: ['PhantomJS']
-		preprocessors: {
-			'src/script/**/*.coffee': 'coffee'
-			'spec/**/*.coffee': 'coffee'
-		}
+		preprocessors:
+			'**/*.coffee': 'coffee'

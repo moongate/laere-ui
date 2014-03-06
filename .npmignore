@@ -5,3 +5,6 @@ node_modules/
 .idea/
 npm-debug.log
 .tmp/
+spec/
+karma.conf.coffee
+LICENSE
