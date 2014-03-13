@@ -3,8 +3,6 @@ node_js:
   - "0.10"
 env:
   - NODE_ENV=test
-before_install:
-  - npm install -g karma coffee-script
 branches:
   only:
     - master
