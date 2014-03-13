@@ -1,19 +1,26 @@
 gulp = require 'gulp'
 connect = require 'connect'
-proxy = require 'proxy-middleware'
+httpProxy = require 'http-proxy'
 harp = require 'harp'
 http = require 'http'
 url = require 'url'
 livereload = require 'gulp-livereload'
 server = livereload()
-
+laerehost = if gulp.env.local then 'laeredev.co' else 'laere.co'
+target =
+  host: laerehost
+  port: 80
+proxy = httpProxy.createProxyServer(target: target)
 files = ["script/**", "spec/**", "style/**", "views/**", "i18n/**",  "img/**", "index.html"]
+
+proxyMiddleware = (req, res) -> proxy.web req, res
 
 gulp.task "connect", ["watch"], ->
   app = connect()
     .use(connect.logger('dev'))
     .use(harp.mount(__dirname + '/'))
-    .use('/', proxy url.parse 'http://www.laere.co') # If not found, proxy to api
+    .use(connect.logger('proxy :: :method :url :status - :response-time ms'))
+    .use('/', proxyMiddleware) # If not found, proxy to api
 
   http.createServer(app).listen(1337)
 

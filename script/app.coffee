@@ -14,8 +14,7 @@ app.factory "Global", [=>
     user: window.laere.user
     authenticated: !!window.laere.user
     school: window.laere.school
-    env: window.laere.env
-    host: window.laere.host
+    host: window.location.host.replace('www.', '')
 
   @_data
 ]
