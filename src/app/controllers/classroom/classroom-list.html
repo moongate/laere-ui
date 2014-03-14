@@ -17,7 +17,7 @@
             <div class="text-muted"><span class="glyphicon glyphicon-time"></span> {{course_classroom.startDate | date}} - {{course_classroom.endDate | date}}</div>
 		</li>
 	</ul>
-    <div ng-include="'views/classrooms/edit.html'" data-ng-show="data.classroom != undefined"></div>
+    <div ng-include="'app/controllers/classroom/classroom-edit.html'" data-ng-show="data.classroom != undefined"></div>
     <div>
         <button class="btn btn-success" ng-click="newClassroom()" 
         data-ng-hide="data.course.classrooms == undefined || data.classroom || data.course.classrooms.length === 0">Create new classroom</button>

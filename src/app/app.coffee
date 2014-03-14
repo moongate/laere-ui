@@ -1,3 +1,5 @@
+console.time 'laere'
+
 window.laere or= {baseUrl:''}
 
 window.app = angular.module("laere", ["ngResource", "ngRoute", "pascalprecht.translate",
@@ -23,54 +25,50 @@ app.factory "Global", [=>
 app.config ($routeProvider) ->
   $routeProvider
   .when "/schools",
-    templateUrl: "views/schools/list.html"
+    templateUrl: "app/controllers/school/school-list.html"
   .when "/schools/create",
-    templateUrl: "views/schools/edit.html"
+    templateUrl: "app/controllers/school/school-edit.html"
   .when "/schools/:schoolId/edit",
-    templateUrl: "views/schools/edit.html"
+    templateUrl: "app/controllers/school/school-edit.html"
   .when "/schools/:schoolId",
-    templateUrl: "views/schools/view.html"
+    templateUrl: "app/controllers/school/school-view.html"
   .when "/users",
-    templateUrl: "views/users/list.html"
+    templateUrl: "app/controllers/user/user-list.html"
   .when "/users/create",
-    templateUrl: "views/users/edit.html"
+    templateUrl: "app/controllers/user/user-edit.html"
   .when "/users/:userId/edit",
-    templateUrl: "views/users/edit.html"
+    templateUrl: "app/controllers/user/user-edit.html"
   .when "/users/:userId",
-    templateUrl: "views/users/view.html"
+    templateUrl: "app/controllers/user/user-view.html"
   .when "/classrooms",
-    templateUrl: "views/progress/list.html"
+    templateUrl: "app/controllers/progress/progress-list.html"
   .when "/progress/:progressId",
-    templateUrl: "views/progress/view.html"
+    templateUrl: "app/controllers/progress/progress-view.html"
   .when "/teach/:classroomId",
-    templateUrl: "views/teach/view.html"
+    templateUrl: "app/controllers/teach/teach-view.html"
   .when "/teach/:classroomId/progress/:progressId",
-    templateUrl: "views/teach/view.html"
+    templateUrl: "app/controllers/teach/teach-view.html"
   .when "/courses",
-    templateUrl: "views/courses/list.html"
+    templateUrl: "app/controllers/course/course-list.html"
   .when "/courses/create",
-    templateUrl: "views/courses/edit.html"
+    templateUrl: "app/controllers/course/course-edit.html"
   .when "/courses/:courseId/edit",
-    templateUrl: "views/courses/edit.html"
+    templateUrl: "app/controllers/course/course-edit.html"
   .when "/courses/:courseId",
-    templateUrl: "views/courses/view.html"
+    templateUrl: "app/controllers/course/course-view.html"
   .when "/login",
-    templateUrl: "views/auth/login.html"
+    templateUrl: "app/controllers/main/auth/login.html"
   .when "/signup",
-      templateUrl: "views/auth/signup.html"
+      templateUrl: "app/controllers/main/auth/signup.html"
   .when "/",
-    templateUrl: "views/home.html"
+    templateUrl: "app/controllers/home/home.html"
   .otherwise redirectTo: "/"
 
 app.config ($translateProvider) ->
   $translateProvider.useStaticFilesLoader
-    prefix: window.laere.baseUrl + 'i18n/'
+    prefix: window.laere.baseUrl + 'assets/i18n/'
     suffix: '.json'
   $translateProvider.preferredLanguage 'pt-BR'
 
-app.run ($rootScope) ->
-  $rootScope.school = window.laere.school
-  $rootScope.messages =
-    error: window.laere.error
-    warning: window.laere.warning
-    success: window.laere.success
+app.run  ->
+  console.timeEnd 'laere'
