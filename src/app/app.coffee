@@ -74,8 +74,3 @@ app.run ($rootScope) ->
     error: window.laere.error
     warning: window.laere.warning
     success: window.laere.success
-
-
-angular.element(document).ready ->
-  window.location.hash = ""  if window.location.hash is "#_=_" # Fixing facebook bug with redirect
-  angular.bootstrap document, ["laere"] # Initialize the app
