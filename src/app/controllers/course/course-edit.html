@@ -37,9 +37,9 @@
 <div class="row">
 
 <section>
-    <div class="col-md-6" ng-include="'views/contents/list.html'"
+    <div class="col-md-6" ng-include="'app/controllers/content/content-list.html'"
          data-ng-show="global.user.permissions.classroom && data.course._id"></div>
-    <div class="col-md-6" ng-include="'views/classrooms/list.html'"
+    <div class="col-md-6" ng-include="'app/controllers/classroom/classroom-list.html'"
          data-ng-show="global.user.permissions.manage && data.course._id"></div>
 </section>
 </div>

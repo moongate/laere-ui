@@ -18,7 +18,7 @@
 
 		</li>
 	</ul>
-    <div ng-include="'views/contents/edit.html'" data-ng-show="data.content"></div>
+    <div ng-include="'app/controllers/content/content-edit.html'" data-ng-show="data.content"></div>
     <div>
         <button class="btn btn-success" ng-click="data.content = {}"
         data-ng-hide="data.content || data.course.contents.length === 0">Create new content</button>

@@ -5,9 +5,9 @@
         </div>
     </div>
     <div class="row" data-ng-controller="ProgressViewController">
-        <div class="col-md-4 sidebar-progress" ng-include="'views/progress/sidebar.html'">
+        <div class="col-md-4 sidebar-progress" ng-include="'app/controllers/progress/progress-sidebar.html'">
         </div>
-        <div class="col-md-8" ng-include="'views/progress/panel.html'" data-ng-show="data.content">
+        <div class="col-md-8" ng-include="'app/controllers/progress/progress-panel.html'" data-ng-show="data.content">
         </div>
     </div>
 </section>
